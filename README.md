@@ -4,6 +4,12 @@
 
 This assignment aims to evaluate your backend development skills using Node.js, Express.js, and MongoDB. You will be tasked with building a RESTful API for a quiz application that allows users to create and participate in timed quizzes.
 
+
+## Disclaimer
+
+You should signup in the quiz app in /users/signup with username and password and then you get token that token used as authentication in all the endpoints of quiz.
+
+
 ## Functionalities
 
 ### 1. Create a Quiz
