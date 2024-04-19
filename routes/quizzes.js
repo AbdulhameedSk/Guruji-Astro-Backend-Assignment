@@ -1,9 +1,13 @@
 const express = require("express");
 const Quiz = require("../models/quizModel");
 const { log } = require("console");
-const router = express.Router();
 const {authMiddleware}=require('../middlewares/authMiddleware');
+
+const router = express.Router();
+
 router.use(authMiddleware);
+
+// Create a new quiz
 router.post("/", async (req, res) => {
   try {
     const quiz = new Quiz(req.body);
@@ -14,6 +18,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Get the active quiz
 router.get("/active", async (req, res) => {
   try {
     const quiz = await Quiz.findOne({ status: "active" });
@@ -25,6 +30,8 @@ router.get("/active", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+// Get the result of a specific quiz
 router.get("/:id/result", async (req, res) => {
   try {
     const quiz = await Quiz.findById(req.params.id);
@@ -43,6 +50,7 @@ router.get("/:id/result", async (req, res) => {
   }
 });
 
+// Get all quizzes
 router.get("/all", async (req, res) => {
   try {
     const quizzes = await Quiz.find();
