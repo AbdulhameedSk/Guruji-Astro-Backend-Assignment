@@ -101,3 +101,10 @@ This assignment aims to evaluate your backend development skills using Node.js, 
 ## Conclusion
 
 This assignment will test your ability to develop a robust backend system for a quiz application, covering various aspects including functionality, security, code quality, documentation, error handling, performance, and deployment. Good luck!
+
+
+# MongoDB Quiz Backup Script using Corn Job
+
+This script connects to a MongoDB client, retrieves quizzes from a source collection, and backs them up to a destination collection within the "quiz" database using a cron job.
+
+
