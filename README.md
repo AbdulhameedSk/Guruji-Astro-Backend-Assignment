@@ -7,7 +7,7 @@ This assignment aims to evaluate your backend development skills using Node.js, 
 
 ## Disclaimer
 
-You should signup in the quiz app in /users/signup with username and password and then you get token that token used as authentication in all the endpoints of quiz.
+You should signup in the quiz app in /users/signup with username and password and then you get token that token used as authentication(The token is Bearer token) in all the endpoints of quiz.
 
 
 ## Functionalities
