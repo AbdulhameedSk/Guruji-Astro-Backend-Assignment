@@ -2,6 +2,8 @@ const express = require("express");
 const Quiz = require("../models/quizModel");
 const { log } = require("console");
 const router = express.Router();
+const {authMiddleware}=require('../middlewares/authMiddleware');
+router.use(authMiddleware);
 router.post("/", async (req, res) => {
   try {
     const quiz = new Quiz(req.body);
@@ -32,7 +34,7 @@ router.get("/:id/result", async (req, res) => {
         .json({ message: "Quiz not found" });
     }
     if (quiz.status !== "finished") {
-      return res.status(404).json({ message: "Quiz not finished" });
+      return res.status(404).json({ message: "Quiz not finished after finishing right answer will be revealed" });
     }
     const result = quiz.options[quiz.rightAnswer] || "No right answer";
     res.json({ rightAnswer: result });
